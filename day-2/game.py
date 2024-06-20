@@ -42,3 +42,27 @@ class Game:
 
 
         return True
+
+    def max_colors(self):
+        colors = {
+                "red": 0,
+                "green": 0,
+                "blue": 0
+                } 
+
+        for round in self.rounds:
+            for key, value in round.items():
+                if value > colors[key]:
+                    colors[key] = value
+
+        return colors
+
+    def mult_colors(self):
+        max_c = self.max_colors()
+
+        mult = 1
+
+        for value in max_c.values():
+            mult*=value
+
+        return mult

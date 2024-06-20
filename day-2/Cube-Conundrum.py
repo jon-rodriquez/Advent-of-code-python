@@ -6,6 +6,7 @@ from game import Game
 def readFile(filename):
     file = open(filename, 'r')
     sum = 0
+    part2_sum = 0
     for line in file:
         game_id, input_string = line.split(": ")
         game_s, g_id = game_id.split(" ")
@@ -14,8 +15,10 @@ def readFile(filename):
         if g.is_valid_game():
             sum += g.get_id()
 
+        part2_sum +=g.mult_colors()
 
     print(sum)
+    print(part2_sum)
 
 
 def main():
