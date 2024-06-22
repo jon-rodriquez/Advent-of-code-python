@@ -11,7 +11,6 @@ def is_special_charater(c):
     return not c.isdigit() and c != "."
 
 def has_adjacent(matrix, row, left, right) -> bool:
-    # print(str(row) +" "+ str(left)+" " + str(right))
     for i in range(left, right+1):
         if i == left:
             #check left
@@ -30,11 +29,9 @@ def has_adjacent(matrix, row, left, right) -> bool:
                 return True
             #check upright
             if right+1<len(matrix[row]) and row-1>=0 and is_special_charater(matrix[row-1][right+1]):
-                print("issue2")
                 return True
             #check downright
             if row+1<len(matrix) and right+1<len(matrix[row]) and is_special_charater(matrix[row+1][right+1]):
-                print("issue3")
                 return True
 
         #check up
@@ -64,7 +61,6 @@ def determine_sum():
             if end_of_num_not_end or end_of_num_end_line:
         #then search for all adjacent spaces for a symbol
                 if has_adjacent(engine_matrix, i, k-len(temp_number)+1, k):
-                    print("adj"+temp_number)
                     sum+=int(temp_number)
                 temp_number = ""
     print(sum)
