@@ -6,10 +6,20 @@ def getNumbers(s):
         if charater.isdigit():
             number.append(charater)
 
-        for j, num in enumerate(['one','two','three','four','five','six','seven','eight','nine']):
+        for j, num in enumerate([
+            "one",
+            "two",
+            "three",
+            "four",
+            "five",
+            "six",
+            "seven",
+            "eight",
+            "nine",
+        ]):
             if s[i:].startswith(num):
-                number.append(str(j+1))
-    
+                number.append(str(j + 1))
+
     num = number[0] + number[-1]
     return int(num)
 
@@ -26,5 +36,9 @@ def readFile(filename):
     print(sum)
 
 
-readFile("./input.txt")
+def main() -> None:
+    readFile("./input.txt")
 
+
+if __name__ == "__main__":
+    main()
